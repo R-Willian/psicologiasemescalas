@@ -377,6 +377,21 @@
         </div>
     </div>
 
+    <div class="carrossel">
+
+        <div class="checklist-header" style="margin-top: 20px;">
+            <h2 class="header-titulo">Nossa Galeria de Fotos</h2>
+        </div>
+        <div class="carrossel-track" id="track">
+          <!-- Paisagem -->
+          <img src="assets/Paisagem_01.jpeg" alt="">
+          <img src="assets/Paisagem_02.jpeg" alt="">
+          <img src="assets/Paisagem_03.jpeg" alt="">
+          <!-- Retrato -->
+          <img src="" alt="">
+        </div>
+      </div>
+
     <section class="contato-container" id="contatos">
         <h2 class="contato-titulo italic" style="font-family: var(--serif); font-style: italic; font-size: 50px;color: var(--gold);">Entre em contato conosco</h2>
         <h6 class="contato-titulo italic" style="font-family: var(--serif); font-style: italic;color: white;">Reserve seu assento neste voo</h6>
@@ -488,4 +503,8 @@
     </footer>
 </body>
 <script src="Js/pipeline.js"></script>
+<script>
+    const track = document.getElementById('track');
+    track.innerHTML += track.innerHTML;
+</script>
 </html>

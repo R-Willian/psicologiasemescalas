@@ -2486,23 +2486,23 @@ strong {
 
 /*
 
-   Tradução das classes do seu exemplo para CSS puro
+Tradução das classes do seu exemplo para CSS puro
 
 */
 
 .card-eyebrow {
 
-    color: #C8A97E;
+color: #C8A97E;
 
-    font-size: 11px;
+font-size: 11px;
 
-    text-transform: uppercase;
+text-transform: uppercase;
 
-    letter-spacing: 2px;
+letter-spacing: 2px;
 
-    margin-bottom: 8px;
+margin-bottom: 8px;
 
-    font-family: var(--font-display, sans-serif);
+font-family: var(--font-display, sans-serif);
 
 }
 
@@ -2510,15 +2510,15 @@ strong {
 
 .card-title {
 
-    font-size: 20px;
+font-size: 20px;
 
-    color: #ffffff;
+color: #ffffff;
 
-    letter-spacing: -0.025em;
+letter-spacing: -0.025em;
 
-    margin-bottom: 8px;
+margin-bottom: 8px;
 
-    font-family: var(--font-display, sans-serif);
+font-family: var(--font-display, sans-serif);
 
 }
 
@@ -2526,11 +2526,57 @@ strong {
 
 .card-desc {
 
-    font-size: 14px;
+font-size: 14px;
 
-    color: #888894;
+color: #888894;
 
-    line-height: 1.625; /* Equivalente ao leading-relaxed */
+line-height: 1.625; /* Equivalente ao leading-relaxed */
 
 } 
 
+/* ===== CARROSSEL ===== */
+.carrossel {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 500px;              /* <-- altura fixa: define a altura de TODAS as fotos */
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+
+.carrossel-track {
+display: flex;
+height: 100%;
+width: max-content;
+animation: rolar 30s linear infinite;
+}
+
+.carrossel-track img {
+height: 100%;               /* mesma altura para paisagem e retrato */
+width: auto;                /* largura se ajusta, mantendo proporção */
+object-fit: cover;          /* evita distorção */
+flex-shrink: 0;
+margin-right: 8px;
+display: block;
+cursor: pointer;
+transition: filter 0.35s ease, transform 0.35s ease;
+filter: brightness(1);
+}
+
+/* Efeito de brilho branco ao passar o mouse
+.carrossel-track img:hover {
+filter: brightness(1) drop-shadow(0 0 18px rgba(255,255,255,0.9))
+        drop-shadow(0 0 35px rgba(255,255,255,0.6));
+transform: scale(1.03);
+}
+
+/* pausa a rolagem quando o mouse está em cima do carrossel inteiro (opcional) */
+/* .carrossel:hover .carrossel-track {
+animation-play-state: paused;
+} */ 
+
+@keyframes rolar {
+from { transform: translateX(0); }
+to   { transform: translateX(-50%); } /* -50% pq duplicamos as imagens abaixo */
+}

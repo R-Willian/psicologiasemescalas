@@ -496,6 +496,28 @@
 <script src="Js/pipeline.js"></script>
 <script>
     const track = document.getElementById('track');
-    track.innerHTML += track.innerHTML;
+    if (track) {
+        track.innerHTML += track.innerHTML;
+    }
+
+    // Controle do Menu Mobile (Abrir / Fechar)
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    if (hamburger && mobileNav) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+    }
+
+    function closeMobileNav() {
+        if (hamburger && mobileNav) {
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
 </script>
 </html>
